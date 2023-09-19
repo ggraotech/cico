@@ -1,0 +1,24 @@
+version: '2'
+
+services:
+    cico-admin:
+      build: ./cico-admin/
+      working_dir: /home/cico
+      ports:
+        - 4200:4200
+      volumes:
+        - ./cico-admin/:/home/cico
+      restart: always
+      tty: true
+      
+
+    cico-app:
+      build: ./cico-app/
+      working_dir: /home/cico
+      ports: 
+        - 4300:4200
+      volumes:
+        - ./cico-app/:/home/cico
+      restart: always
+      tty: true
+  
